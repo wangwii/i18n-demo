@@ -12,9 +12,10 @@ class SiteController extends CController
 
 	public function actionIndex()
 	{
+		Yii::app()->language = $this->detectUserLang();
 		$data = [
 			'todos' => TodoForm::all(),
-			'lang' => Lang::info($this->detectUserLang())
+			'lang' => Lang::info(Yii::app()->language)
 		];
 		$this->render('index', ['data' => $data]);
 	}
