@@ -8,6 +8,7 @@
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'runtimePath' => '/var/web/runtime',
+	'sourceLanguage' => 'en_au',
 	'name'=>'Demo for i18n ',
 
 	// preloading 'log' component
@@ -65,9 +66,12 @@ return array(
 				*/
 			),
 		),
+
+		'messages'=>array(
+			'class'=>'CJsonMessageSource'
+		)
 	),
 	// application-level parameters that can be accessed
 	// using Yii::app()->params['paramName']
-	'params'=>array(
-	),
+	'params'=>array()
 );

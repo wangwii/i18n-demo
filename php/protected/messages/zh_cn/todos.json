@@ -1,0 +1,16 @@
+{
+  "English": "英语",
+  "Chinese": "中文",
+  "China": "中国",
+  "Australia": "澳大利亚",
+
+  "Todos": "待办事项",
+  "What needs to be done?": "需要做什么？",
+  "All": "全部",
+  "Active": "未完成",
+  "Completed": "已完成",
+  "Clear completed": "清空已完成项",
+  "<strong>No</strong> items left": "没有剩余项",
+  "<strong>{number}</strong> item left": "还剩 <strong>{number}</strong> 项",
+  "<strong>{number}</strong> items left": "还有 <strong>{number}</strong> 项"
+}

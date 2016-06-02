@@ -2,40 +2,23 @@
 
 class SiteController extends CController
 {
+	private static $USER_LANG_COOKIE_NAME = "_todos_user_lang";
+
 	public $layout='//layouts/main';
 
-	/**
-	 * Declares class-based actions.
-	 */
-	public function actions()
-	{
-		return array(
-			// captcha action renders the CAPTCHA image displayed on the contact page
-			'captcha'=>array(
-				'class'=>'CCaptchaAction',
-				'backColor'=>0xFFFFFF,
-			),
-			// page action renders "static" pages stored under 'protected/views/site/pages'
-			// They can be accessed via: index.php?r=site/page&view=FileName
-			'page'=>array(
-				'class'=>'CViewAction',
-			),
-		);
+	public function filters(){
+		return [];
 	}
 
-	/**
-	 * This is the default 'index' action that is invoked
-	 * when an action is not explicitly requested by users.
-	 */
 	public function actionIndex()
 	{
-		$data = ['todos' => TodoForm::all()];
+		$data = [
+			'todos' => TodoForm::all(),
+			'lang' => Lang::info($this->detectUserLang())
+		];
 		$this->render('index', ['data' => $data]);
 	}
 
-	/**
-	 * This is the action to handle external exceptions.
-	 */
 	public function actionError()
 	{
 		if($error=Yii::app()->errorHandler->error)
@@ -47,29 +30,8 @@ class SiteController extends CController
 		}
 	}
 
-	/**
-	 * Displays the login page
-	 */
-	public function actionLogin()
-	{
-		$model=new LoginForm;
-
-		// if it is ajax validation request
-		if(isset($_POST['ajax']) && $_POST['ajax']==='login-form')
-		{
-			echo CActiveForm::validate($model);
-			Yii::app()->end();
-		}
-
-		// collect user input data
-		if(isset($_POST['LoginForm']))
-		{
-			$model->attributes=$_POST['LoginForm'];
-			// validate user input and redirect to the previous page if valid
-			if($model->validate() && $model->login())
-				$this->redirect(Yii::app()->user->returnUrl);
-		}
-		// display the login form
-		$this->render('login',array('model'=>$model));
+	private function detectUserLang(){
+		# TODO: Check query string and cookie for user favorite lang
+		return Yii::app()->request->preferredLanguage;
 	}
 }

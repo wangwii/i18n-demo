@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Demo for i18n with Yii</title>
+    <title>i18n - Yii/PHP</title>
   </head>
   <body>
     <div id="root"></div>

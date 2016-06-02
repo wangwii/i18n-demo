@@ -1,8 +1,8 @@
-
 import React, { Component } from 'react'
 import { SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE } from '../../constants/filters'
 import classnames from 'classnames'
 import style from './style.css'
+import Translater from '../../helper/translater'
 
 const FILTER_TITLES = {
   [SHOW_ALL]: 'All',
@@ -10,15 +10,20 @@ const FILTER_TITLES = {
   [SHOW_COMPLETED]: 'Completed'
 }
 
+@Translater
 class Footer extends Component {
   renderTodoCount() {
-    const { activeCount } = this.props
-    const itemWord = activeCount === 1 ? 'item' : 'items'
+    const { activeCount } = this.props;
+
+    let msg = '<strong>{number}</strong> items left';
+    if(activeCount == 0){
+      msg = '<strong>No</strong> items left';
+    }else if(activeCount == 1){
+      msg = '<strong>{number}</strong> item left';
+    }
 
     return (
-      <span className={style.count}>
-        <strong>{activeCount || 'No'}</strong> {itemWord} left
-      </span>
+      <span className={style.count} dangerouslySetInnerHTML={{__html: this.props.t(msg, {number: activeCount})}}/>
     )
   }
 
@@ -30,18 +35,17 @@ class Footer extends Component {
       <a className={classnames({ [style.selected]: filter === selectedFilter })}
          style={{ cursor: 'pointer' }}
          onClick={() => onShow(filter)}>
-        {title}
+        {this.props.t(title)}
       </a>
     )
   }
 
   renderClearButton() {
-    const { completedCount, onClearCompleted } = this.props
+    const { completedCount, onClearCompleted } = this.props;
     if (completedCount > 0) {
+      const btnText = this.props.t('Clear completed');
       return (
-        <button className={style.clearCompleted} onClick={onClearCompleted} >
-          Clear completed
-        </button>
+        <button className={style.clearCompleted} onClick={onClearCompleted}>{ btnText }</button>
       )
     }
   }

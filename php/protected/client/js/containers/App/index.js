@@ -1,17 +1,20 @@
-
 import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
+import LanguageSelector from '../../components/LanguageSelector'
 import Header from '../../components/Header'
 import MainSection from '../../components/MainSection'
 import * as TodoActions from '../../actions/todos'
+import * as LangActions from '../../actions/lang'
 import style from './style.css'
 
 class App extends Component {
-  render() {
-    const { todos, actions, children } = this.props
+  render(){
+    const { todos, actions, children } = this.props;
+
     return (
       <div className={style.normal}>
+        <LanguageSelector setLang={actions.setLang} />
         <Header addTodo={actions.addTodo} />
         <MainSection todos={todos} actions={actions} />
         {children}
@@ -20,19 +23,16 @@ class App extends Component {
   }
 }
 
-function mapStateToProps(state) {
+function mapStateToProps(state){
   return {
-    todos: state.todos
+    todos: state.todos, lang: state.lang
   }
 }
 
-function mapDispatchToProps(dispatch) {
+function mapDispatchToProps(dispatch){
   return {
-    actions: bindActionCreators(TodoActions, dispatch)
+    actions: bindActionCreators({...TodoActions, ...LangActions}, dispatch)
   }
 }
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(App)
+export default connect(mapStateToProps, mapDispatchToProps)(App)
