@@ -11,4 +11,5 @@ logs
 *.iml
 *.ipr
 *.iws
+npm-debug.log
 java/src/main/webapp/resources
