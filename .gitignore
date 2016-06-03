@@ -1,6 +1,10 @@
 .DS_STORE
 .module-cache
-.idea
 node_modules
 vendor
 static
+.gradle
+.idea
+build
+out
+logs
