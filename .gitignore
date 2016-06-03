@@ -8,3 +8,6 @@ static
 build
 out
 logs
+*.iml
+*.ipr
+*.iws
