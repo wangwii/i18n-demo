@@ -25,12 +25,12 @@ for example: ZH: Chinese, EN: English, FR: French, DE: German
 We usually use language + locale(zh_CN, en_AU) to recognize specific resource and information.
 
 The goal of this repo is show the solution for i18n in different platform:
-* [PHP](https://github.com/wangwii/i18n-demo/tree/master/php)
-* [Ruby](https://github.com/wangwii/i18n-demo/tree/master/ruby)
-* [Java]
-* [JavaScript]()
-* [Android]()
-* [Swift]()
+- [x] [PHP](https://github.com/wangwii/i18n-demo/tree/master/php)
+- [x] [Java](https://github.com/wangwii/i18n-demo/tree/master/java)
+- [] [Ruby]
+- [] [JavaScript]()
+- [] [Android]()
+- [] [Swift]()
 
 ### Others
 * [CaseyLeask's Demo](https://github.com/CaseyLeask/frontend-boilerplate)
