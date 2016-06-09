@@ -64,6 +64,7 @@
 .editing {
   border-bottom: none;
   padding: 0;
+  composes: normal;
 }
 
 .editing:last-child {

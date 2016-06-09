@@ -7,7 +7,7 @@
   "scripts": {
     "build": "BUILD_PROD=1 webpack --progress --colors",
     "dev-php": "OUTPUT_PATH=../php/static/ webpack --progress --colors --watch",
-    "dev-java": "OUTPUT_PATH=../java/src/main/webapp/resources/ webpack --progress --colors --watch"
+    "dev-java": "OUTPUT_PATH=../java/src/main/webapp/static/ webpack --progress --colors --watch"
   },
   "license": "MIT",
   "devDependencies": {
