@@ -5,8 +5,8 @@ const inject = connect(state => { return { lang: state.lang }});
 
 export default ComposedComponent =>{
   return inject(class extends React.Component {
-    t(text, params = {}, category = 'todos'){
-      return this.props.lang.t(text, params, category);
+    t(message_key, params = {}){
+      return this.props.lang.t(message_key, params);
     }
 
     render() {

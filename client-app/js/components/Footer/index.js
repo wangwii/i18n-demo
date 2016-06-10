@@ -5,9 +5,9 @@ import style from './style.css'
 import Translater from '../../helper/translater'
 
 const FILTER_TITLES = {
-  [SHOW_ALL]: 'All',
-  [SHOW_ACTIVE]: 'Active',
-  [SHOW_COMPLETED]: 'Completed'
+  [SHOW_ALL]: 'todos.filter_bar_title_all',
+  [SHOW_ACTIVE]: 'todos.filter_bar_title_active',
+  [SHOW_COMPLETED]: 'todos.filter_bar_title_completed'
 }
 
 @Translater
@@ -15,11 +15,11 @@ class Footer extends Component {
   renderTodoCount() {
     const { activeCount } = this.props;
 
-    let msg = '<strong>{number}</strong> items left';
+    let msg = 'todos.filter_bar_title_left_items';
     if(activeCount == 0){
-      msg = '<strong>No</strong> items left';
+      msg = 'todos.filter_bar_title_left_item0';
     }else if(activeCount == 1){
-      msg = '<strong>{number}</strong> item left';
+      msg = 'todos.filter_bar_title_left_item1';
     }
 
     return (
@@ -43,7 +43,7 @@ class Footer extends Component {
   renderClearButton() {
     const { completedCount, onClearCompleted } = this.props;
     if (completedCount > 0) {
-      const btnText = this.props.t('Clear completed');
+      const btnText = this.props.t('todos.filter_bar_title_clear_completed');
       return (
         <button className={style.clearCompleted} onClick={onClearCompleted}>{ btnText }</button>
       )

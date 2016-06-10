@@ -13,11 +13,11 @@ class Header extends Component {
   render() {
     return (
       <header>
-        <h1>{this.props.t('Todos')}</h1>
+        <h1>{this.props.t('todos.app_title')}</h1>
         <TodoTextInput
           newTodo
           onSave={::this.handleSave}
-          placeholder={this.props.t('What needs to be done?')} />
+          placeholder={this.props.t('todos.input_placeholder')} />
       </header>
     )
   }

@@ -2,8 +2,8 @@ import lodash from 'lodash';
 import { handleActions } from 'redux-actions';
 
 const generateT = (obj)=>{
-  return (message, params, category)=>{
-    var msg = _.get(obj, `messages.${obj.target}.${category}['${message}']`, message);
+  return (message, params)=>{
+    var msg = _.get(obj, `messages.${obj.target}['${message}']`, message);
     if(!_.isEmpty(params)){
       msg = msg.format(params);
     }

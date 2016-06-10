@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "build": "BUILD_PROD=1 OUTPUT_PATH=../php/static/ webpack --progress --colors",
-    "dev": "OUTPUT_PATH=../php/static/ webpack --progress --colors --watch",
+    "dev": "OUTPUT_PATH=../php/static/ webpack --progress --colors --watch"
   },
   "license": "MIT",
   "devDependencies": {

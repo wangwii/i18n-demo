@@ -1,8 +1,4 @@
-<%@ page import="com.github.wangwii.i18ndemo.i18n.Langs" %>
-<%@ page import="com.github.wangwii.i18ndemo.domain.Todo" %>
-<%@ page import="java.util.List" %>
-<%@ page import="java.util.HashMap" %>
-<%@ page import="com.google.gson.GsonBuilder" %>
+<%@ page pageEncoding="utf-8" import="java.util.*,com.google.gson.GsonBuilder,com.github.wangwii.i18ndemo.i18n.Langs,com.github.wangwii.i18ndemo.domain.Todo "%>
 <!doctype html>
 <html lang="en">
 <head>
