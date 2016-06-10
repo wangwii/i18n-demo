@@ -1,0 +1,1 @@
+../client-app/webpack.config.js

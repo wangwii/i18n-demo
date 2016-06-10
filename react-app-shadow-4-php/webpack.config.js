@@ -1,1 +1,0 @@
-../react-app/webpack.config.js

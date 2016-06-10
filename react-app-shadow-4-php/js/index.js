@@ -1,1 +1,0 @@
-../../react-app/js/index.js
