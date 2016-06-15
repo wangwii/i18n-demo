@@ -2,9 +2,9 @@
 Demo code for i18n(internationalization) for web application.
 
 ### Historic and Traditional
-[GNU gettext](https://www.gnu.org/software/gettext/)
-[ICU(International Component for Unicode)](http://userguide.icu-project.org/)
-[CLDR(Common Locale Data Repository)](http://cldr.unicode.org/)
+* [GNU gettext](https://www.gnu.org/software/gettext/)
+* [ICU(International Component for Unicode)](http://userguide.icu-project.org/)
+* [CLDR(Common Locale Data Repository)](http://cldr.unicode.org/)
 
 ### Overview
 In the world of web application the internationalization(i18n) means:
