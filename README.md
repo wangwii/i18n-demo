@@ -1,6 +1,11 @@
 # i18n-demo
 Demo code for i18n(internationalization) for web application.
 
+### Historic and Traditional
+[GNU gettext](https://www.gnu.org/software/gettext/)
+[ICU(International Component for Unicode)](http://userguide.icu-project.org/)
+[CLDR(Common Locale Data Repository)](http://cldr.unicode.org/)
+
 ### Overview
 In the world of web application the internationalization(i18n) means:
 * Display different label/text in UI, let's call it *Resource*.
@@ -25,10 +30,10 @@ for example: ZH: Chinese, EN: English, FR: French, DE: German
 We usually use language + locale(zh_CN, en_AU) to recognize specific resource and information.
 
 The goal of this repo is show the solution for i18n in different platform:
+- [x] [JavaScript](https://github.com/wangwii/i18n-demo/tree/master/javascript)
 - [x] [PHP](https://github.com/wangwii/i18n-demo/tree/master/php)
 - [x] [Java](https://github.com/wangwii/i18n-demo/tree/master/java)
 - [] [Ruby]
-- [] [JavaScript]()
 - [] [Android]()
 - [] [Swift]()
 
